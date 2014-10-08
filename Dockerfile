@@ -25,3 +25,6 @@ RUN bundle install
 RUN mkdir -p /etc/my_init.d
 ADD backend_ip.sh /etc/my_init.d/backend_ip.sh
 RUN chmod +x /etc/my_init.d/backend_ip.sh
+
+# https://github.com/phusion/baseimage-docker#working-around-dockers-inability-to-modify-etchosts
+RUN /usr/bin/workaround-docker-2267
